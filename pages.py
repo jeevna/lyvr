@@ -17,11 +17,7 @@ def index():
 @bp.route('/results')
 def results():
     text = ocr.ocr("sample_files/labsample2.jpg")
-    print(text)
-    t = text.split(" ")
-    k = ""
-    for i in t:
-        if len(i) > 0:
-            k = i
+    k = text
+
 
     return render_template('results.html', t = k)
