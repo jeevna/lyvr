@@ -3,29 +3,6 @@ from flask import Flask, request, redirect, session, render_template
 from datetime import timedelta
 import sys
 
-# =========== gcloud initialization =================
-import base64
-import json
-import os
-
-from google.cloud import pubsub_v1
-from google.cloud import storage
-from google.cloud import translate
-from google.cloud import vision
-
-vision_client = vision.ImageAnnotatorClient()
-translate_client = translate.Client()
-publisher = pubsub_v1.PublisherClient()
-storage_client = storage.Client()
-
-project_id = os.environ['GCP_PROJECT']
-
-with open('config.json') as f:
-    data = f.read()
-config = json.loads(data)
-
-# =========== gcloud initialization =================
-
 
 app = Flask(__name__)
 #app.debug = True

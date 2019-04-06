@@ -1,0 +1,7 @@
+{
+  "RESULT_TOPIC": "wics_topic_name",
+  "RESULT_BUCKET": "wics_text_bucket",
+  "TRANSLATE_TOPIC": "wics_translate_topic",
+  "TRANSLATE": true,
+  "TO_LANG": ["en", "fr", "es", "ja", "ru"]
+}
