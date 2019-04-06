@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, redirect, session, render_template
 from datetime import timedelta
 import sys
-
+import ocr
 
 app = Flask(__name__)
 #app.debug = True

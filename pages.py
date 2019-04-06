@@ -5,7 +5,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 import psycopg2
-
+import ocr
 
 bp = Blueprint('pages', __name__, url_prefix='')
 
@@ -16,4 +16,12 @@ def index():
 
 @bp.route('/results')
 def results():
-    return render_template('results.html')
+    text = ocr.ocr("sample_files/labsample2.jpg")
+    print(text)
+    t = text.split(" ")
+    k = ""
+    for i in t:
+        if len(i) > 0:
+            k = i
+
+    return render_template('results.html', t = k)
